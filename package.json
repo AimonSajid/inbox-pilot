@@ -1,0 +1,26 @@
+{
+  "name": "inbox-pilot",
+  "private": true,
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "db:generate": "pnpm --filter @inbox-pilot/api db:generate",
+    "db:migrate": "pnpm --filter @inbox-pilot/api db:migrate"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma"
+    ]
+  }
+}
